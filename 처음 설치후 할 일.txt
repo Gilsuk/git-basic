@@ -1,0 +1,11 @@
+-statsh
+git stash pop stash@{N} --index
+git stash apply stash@{N} --index
+git stash drop stash@{N}
+git stash list
+
+-- reset, revert
+
+-- push to remote
+git push origin localBranchName:remoteBranchName
++ 병합 충돌 시나리오
