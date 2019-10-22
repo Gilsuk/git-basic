@@ -17,3 +17,37 @@ github의 레포 주소는 https://github.com/sitaramc/gitolite.git 이런 형�
 >> git clone https://github.com/sitaramc/gitolite.git
 로 원격 저장소를 로컬로 복제해 올 수 있다.
 
+## 원격저장소 등록하기
+>> git remote add <remote_name> <원격지_주소>
+remote_name은 임의로 생성하면 되는 이름이고, 이 이름으로 레포에 등록된다.
+
+## remote add 와 clone
+clone은 내가 가지고 있는 프로젝트가 없고, 이미 진행된 프로젝트의 중간단계부터
+참여하고 싶을 때, 원격 저장소에 존재하는 레포를 처음부터 다 내려받아
+로컬 저장소를 생성하는 과정이다.
+
+clone을 하고나면, 자동으로 git remote add origin <주소> 명령으로
+remote 레포를 origin 이라는 이름으로 연결해놓는다. origin 이라는 이름은
+clone할 때 자동으로 생성되는 것이므로 관행적으로 메인 저장소를 지칭하는데
+이름은 변경할 수도 있다.
+
+remote add는 이미 로컬레포가 있는 상태에서, 리모트레포를 연결할 때 사용한다.
+
+중앙 저상소로 github를 사용하는 팀 프로젝트의 구성원이 alice, bob, caesar가
+있다고 할 때, 셋 모두 origin 이라는 이름의 remote레포로 github를 보고 있지만,
+alice가 bob에게 멋진 기능을 개발했는데 github에 올리기 전에 검토를 해달라고
+요청할 수도 있다. 이 때, bob은 alice의 레포를 remote로 등록하고, alice의 작업상황을
+내려받아볼 수 있다.
+>> git remote add alice <alice의_주소>
+
+이렇게 하면, bob에게는 github을 바라보는 origin과 alice를 바라보는 alice
+리모트 저장소가 생긴다. 리모트 저장소는 이렇게 여러개를 연결할 수도 있다.
+
+## 원격저장소 이름 변경하기
+>> git remote rename <old> <new>
+따라서 깃헙에서 클론한 프로젝트에서
+>> git remote rename origin github
+명령을 내리면, origin의 이름을 github으로 바꿔 좀 더 기억하기 쉬워진다.
+
+## remote 지우기
+>> git remote remove <remote_name>
