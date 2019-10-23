@@ -1,0 +1,14 @@
+기본 텍스트 에디터 메모장으로 변경
+---
+    git config --global core.editor "notepad"
+git의 기본 에디터는 커밋메세지를 작성할 때 사용하는 텍스트 에디터로, 어떤것을 사용해도 괜찮지만, 익숙한 메모장이 편할 것이다.
+유저정보 등록
+---
+    git config --global user.name "YOUR_NAME_HERE"
+    git config --global user.email "YOUR_EMAIL_HERE"
+커밋할 떄, 저자를 식별하기 위해 유저정보가 같이 기록되는데 이 때 사용될 이름과 이메일을 입력한다. 이메일주소는 단순 식별용으로, 실제 메일주소인지 검증하지는 않는다.
+개별레포별 유저정보 등록
+---
+    git config --local user.name "YOUR_NAME_HERE"
+    git config --local user.email "YOUR_EMAIL_HERE"
+--local 옵션은 개별 레포단위로 동작하는데, 예를들어 회사 프로젝트에는 실명으로, 웹에 올릴때는 영문이름이나 별명 등으로 설정할 때 유용하다. --global과 --local이 동시에 설정된 경우 --local이 우선된다.
